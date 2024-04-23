@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="./output.css" rel="stylesheet">
+    <script src="//unpkg.com/alpinejs" defer></script>
+</head>
+<body class="font-Inter">
+    <div class="px-8 pt-5 pb-12">
+        <div class="flex items-start justify-between md:flex-none md:grid md:grid-cols-12 gap-4">
+        <!-- sidebar-->
+        <div class="col-span-3 lg:col-span-2">
+            <img src="Assets/PesaflowLogo.png" alt="" class=" h-6 lg:h-5 xl:h-6 w-auto">
+        </div>
+        <!--Right side  -->
+        <div class="hidden md:block col-span-9 lg:col-span-10">
+            <div class=" flex justify-between items-start">
+                <div class="flex  items-center">
+                    <button class="flex gap-2 items-center py-2 px-4 rounded-[20px] bg-[#EDF4FD] ">
+                        <svg width="22" height="12" viewBox="0 0 22 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9.00049 10H17C19.2091 10 21 8.20914 21 6C21 3.79086 19.2091 2 17 2H9.00049M11 6C11 8.76142 8.76142 11 6 11C3.23858 11 1 8.76142 1 6C1 3.23858 3.23858 1 6 1C8.76142 1 11 3.23858 11 6Z" stroke="#475467" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span class="text-xs sm:text-sm font-semibold text-left text-[#475467] ">Master agent</span>
+                    </button>
+                </div>
+                <div class="flex justify-between items-center float-right gap-3 ">
+                    <div class=" text-[#2C7BE5]  text-xs sm:text-sm font-semibold capitalize align-top pr-4 
+                    ">Need Help? </div>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12.8383 15.0817C14.7329 14.857 16.5598 14.4116 18.2926 13.7719C16.8558 12.177 15.9812 10.0656 15.9812 7.75V7.04919C15.9814 7.03281 15.9814 7.01641 15.9814 7C15.9814 3.68629 13.2952 1 9.98145 1C6.66774 1 3.98145 3.68629 3.98145 7L3.98125 7.75C3.98125 10.0656 3.10672 12.177 1.66992 13.7719C3.40285 14.4116 5.22988 14.857 7.12458 15.0818M12.8383 15.0817C11.9014 15.1928 10.948 15.25 9.98125 15.25C9.01461 15.25 8.06133 15.1929 7.12458 15.0818M12.8383 15.0817C12.9312 15.3711 12.9814 15.6797 12.9814 16C12.9814 17.6569 11.6383 19 9.98145 19C8.32459 19 6.98145 17.6569 6.98145 16C6.98145 15.6797 7.03164 15.3712 7.12458 15.0818" stroke="#667085" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>                        
+                    <div class="rounded-[40px] border-transparent align-top">
+                        <img src="Assets/Person.svg" alt="" class="h-10 w-10">
+                            
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Hamburger-Menu -->
+        <div class=" text-white relative z-10  md:hidden">
+            <div class="h-20">
+               <!-- Menu -->
+               <div x-data="{ open: false }" class="z-10 flex flex-1 items-center" x-cloak>
+                  <div :class="{ 'flex' : open, 'hidden' : open === false }" class=" fixed lg:relative top-0 left-0 w-full lg:w-auto h-screen lg:h-auto  flex-col  items-center justify-center  z-50 bg-[#F6F9FE]   uppercase    hidden overflow-hidden">
+                    <div class="space-y-10 tracking-wider gap-8">
+                        <a href="#" class="flex gap-2 items-center stroke-[#111827] hover:stroke-[#2C7BE5] text-[#111827] hover:text-[#2C7BE5]">
+                            <img src="Assets/Person.svg" alt="" class="h-10 w-10">
+                            <span class=" text-sm sm:text-base lg:text-lg font-bold text-left">Profile</span>
+                        </a>
+                        <a href="#" class="flex gap-2 items-center stroke-[#111827] hover:stroke-[#2C7BE5] text-[#111827] hover:text-[#2C7BE5]">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12.8383 15.0817C14.7329 14.857 16.5598 14.4116 18.2926 13.7719C16.8558 12.177 15.9812 10.0656 15.9812 7.75V7.04919C15.9814 7.03281 15.9814 7.01641 15.9814 7C15.9814 3.68629 13.2952 1 9.98145 1C6.66774 1 3.98145 3.68629 3.98145 7L3.98125 7.75C3.98125 10.0656 3.10672 12.177 1.66992 13.7719C3.40285 14.4116 5.22988 14.857 7.12458 15.0818M12.8383 15.0817C11.9014 15.1928 10.948 15.25 9.98125 15.25C9.01461 15.25 8.06133 15.1929 7.12458 15.0818M12.8383 15.0817C12.9312 15.3711 12.9814 15.6797 12.9814 16C12.9814 17.6569 11.6383 19 9.98145 19C8.32459 19 6.98145 17.6569 6.98145 16C6.98145 15.6797 7.03164 15.3712 7.12458 15.0818"  stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span class=" text-sm sm:text-base lg:text-lg font-bold text-left">Notifications</span>
+                        </a>
+                        <a href="#" class="flex gap-2 items-center stroke-[#111827] hover:stroke-[#2C7BE5] text-[#111827] hover:text-[#2C7BE5]">
+                            <span class=" text-sm sm:text-base lg:text-lg font-bold text-center">
+                             HELP AND SUPPORT </span>
+                        </a>
+                    </div>
+                  </div>
+                  <button @click="open = true" type="button" :class="{ 'hidden' : open, 'block' : !open }" class="block md:hidden text-4xl font-thin"><img src="Assets/Hamburger-Menu.png" alt="" class="h-8 w-auto"></button>
+                  <button @click="open = false" type="button" :class="{ 'block' : open, 'hidden' : !open }" class="text-black md:hidden absolute top-0 right-0 leading-none  text-2xl z-50 hidden pr-1">╳</button>
+               </div>
+               <!-- / Menu -->
+            </div>
+         </div>
+
+        </div>
+        <!-- body -->
+        <div class="md:grid md:grid-cols-12 gap-4 w-full">
+            <div class="hidden lg:block lg:col-span-2">
+                &nbsp;
+            </div>
+        <div class="col-span-12 lg:col-span-8 ">
+            <!-- Back -->
+            <div class="md:py-10">
+                <button class="md:hidden flex gap-2 items-center py-2 px-4 mb-4 rounded-[20px] bg-[#EDF4FD] ">
+                    <svg width="22" height="12" viewBox="0 0 22 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9.00049 10H17C19.2091 10 21 8.20914 21 6C21 3.79086 19.2091 2 17 2H9.00049M11 6C11 8.76142 8.76142 11 6 11C3.23858 11 1 8.76142 1 6C1 3.23858 3.23858 1 6 1C8.76142 1 11 3.23858 11 6Z" stroke="#475467" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span class="text-xs sm:text-sm font-semibold text-left text-[#475467] ">Master agent</span>
+                </button>
+                <div class="flex items-center gap-2 ">
+                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10.6673 5.99967H1.33398M1.33398 5.99967L6.00065 10.6663M1.33398 5.99967L6.00065 1.33301" stroke="#111827" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span class="text-[#111827] text-xs sm:text-sm font-medium ">
+                        Back
+                    </span>    
+                </div>
+            </div>
+            <div class="lg:px-8 xl:px-20 pt-6 md:pt-0">
+                <div>
+                    <p class="text-[#111827] text-xl sm:text-2xl font-medium  ">Welcome to Pesaflow Help & Support</p>
+                </div>
+                <div class="gap-3 p-6 my-6 rounded-lg bg-[#F6F9FE]">
+                    <p class="text-[#111827] text-sm sm:text-base font-semibold ">Our Contacts</p>
+                    <div class="gap-3 sm:flex justify-between items-end pt-4 space-y-4 sm:space-y-0">
+                        <div>
+                            <p class="text-[#111111CC] text-xs sm:text-sm font-medium ">Customer Care</p>
+                            <p class="text-[#111827] text-sm sm:text-base font-medium ">+254 20 790 3260</p>
+                        </div>
+                        <div>
+                            <p class="text-[#111111CC] text-xs sm:text-sm font-medium ">Email address</p>
+                            <p class="text-[#111827] text-sm sm:text-base font-medium ">support@pesaflow.com</p>
+                        </div>
+                        <div class="flex items-end gap-6">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 17.9895 4.3882 22.954 10.125 23.8542V15.4688H7.07812V12H10.125V9.35625C10.125 6.34875 11.9166 4.6875 14.6576 4.6875C15.9701 4.6875 17.3438 4.92188 17.3438 4.92188V7.875H15.8306C14.34 7.875 13.875 8.80008 13.875 9.75V12H17.2031L16.6711 15.4688H13.875V23.8542C19.6118 22.954 24 17.9895 24 12Z" fill="#1877F2"/>
+                            </svg>                            
+                            <svg width="24" height="20" viewBox="0 0 24 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7.54752 19.7503C16.6042 19.7503 21.5578 12.2469 21.5578 5.74003C21.5578 5.52691 21.5578 5.31475 21.5434 5.10355C22.507 4.40651 23.3389 3.54344 24 2.55475C23.1014 2.95315 22.148 3.21431 21.1718 3.32947C22.1998 2.71416 22.9692 1.74625 23.3366 0.605952C22.3701 1.17956 21.3126 1.58378 20.2099 1.80115C19.4675 1.01173 18.4856 0.488993 17.4162 0.313836C16.3468 0.138679 15.2494 0.320866 14.294 0.832205C13.3385 1.34354 12.5782 2.15553 12.1307 3.1425C11.6833 4.12947 11.5735 5.23642 11.8186 6.29203C9.8609 6.19383 7.94576 5.68506 6.19745 4.79876C4.44915 3.91245 2.90676 2.66841 1.6704 1.14739C1.04073 2.23139 0.847872 3.51462 1.1311 4.73581C1.41433 5.95701 2.15234 7.02435 3.19488 7.72051C2.41123 7.69755 1.64465 7.48615 0.96 7.10419V7.16659C0.960311 8.30344 1.35385 9.40519 2.07387 10.285C2.79389 11.1647 3.79606 11.7684 4.9104 11.9935C4.18548 12.1912 3.42487 12.2201 2.68704 12.078C3.00181 13.0563 3.61443 13.9118 4.43924 14.5249C5.26405 15.138 6.25983 15.478 7.28736 15.4975C6.26644 16.2999 5.09731 16.8933 3.84687 17.2435C2.59643 17.5937 1.28921 17.6939 0 17.5384C2.25183 18.9834 4.87192 19.7499 7.54752 19.7464" fill="#1DA1F2"/>
+                            </svg>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M22.2283 0H1.77167C1.30179 0 0.851161 0.186657 0.518909 0.518909C0.186657 0.851161 0 1.30179 0 1.77167V22.2283C0 22.6982 0.186657 23.1488 0.518909 23.4811C0.851161 23.8133 1.30179 24 1.77167 24H22.2283C22.6982 24 23.1488 23.8133 23.4811 23.4811C23.8133 23.1488 24 22.6982 24 22.2283V1.77167C24 1.30179 23.8133 0.851161 23.4811 0.518909C23.1488 0.186657 22.6982 0 22.2283 0ZM7.15333 20.445H3.545V8.98333H7.15333V20.445ZM5.34667 7.395C4.93736 7.3927 4.53792 7.2692 4.19873 7.04009C3.85955 6.81098 3.59584 6.48653 3.44088 6.10769C3.28591 5.72885 3.24665 5.31259 3.32803 4.91145C3.40941 4.51032 3.6078 4.14228 3.89816 3.85378C4.18851 3.56529 4.55782 3.36927 4.95947 3.29046C5.36112 3.21165 5.77711 3.25359 6.15495 3.41099C6.53279 3.56838 6.85554 3.83417 7.08247 4.17481C7.30939 4.51546 7.43032 4.91569 7.43 5.325C7.43386 5.59903 7.38251 5.87104 7.27901 6.1248C7.17551 6.37857 7.02198 6.6089 6.82757 6.80207C6.63316 6.99523 6.40185 7.14728 6.14742 7.24915C5.893 7.35102 5.62067 7.40062 5.34667 7.395ZM20.4533 20.455H16.8467V14.1933C16.8467 12.3467 16.0617 11.7767 15.0483 11.7767C13.9783 11.7767 12.9283 12.5833 12.9283 14.24V20.455H9.32V8.99167H12.79V10.58H12.8367C13.185 9.875 14.405 8.67 16.2667 8.67C18.28 8.67 20.455 9.865 20.455 13.365L20.4533 20.455Z" fill="#0A66C2"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <!-- Frequently Asked Questions -->
+                <div class="py-2 md:mt-8">
+                    <p class="text-[#111827] text-xl sm:text-2xl font-medium  ">Frequently Asked Questions</p>
+                </div>
+                <div class="transition-colors ease-in-out duration-500">
+                    <div x-data="{open:false}" : class="mt-3 py-5 px-6 transition-all ease-in-out duration-200  border rounded-lg border-[#EAECF0] gap-4 h-fit" x-cloak>
+                        <div class="inline-flex flex-col gap-x-80 w-full items-center justify-between">
+                          <div class="flex justify-between w-full items-center">
+                            <p class=" text-sm sm:text-base font-medium ">Why is Pesaflow the best payments tool?</p>
+                            <div class="">
+                                <svg @click="open = true" x-show="!open" width="30" height="31" viewBox="0 0 30 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect y="0.0605469" width="30" height="30" rx="8" fill="#EAECF0"/>
+                                    <path d="M15 8V22M8 15H22" stroke="#667085" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                <svg x-show="open" @click="open = false"  width="30" height="31" viewBox="0 0 30 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect y="0.0605469" width="30" height="30" rx="8" fill="#2C7BE5"/>
+                                <path d="M8.44963 14.75C8.06324 14.75 7.75 15.0632 7.75 15.4496C7.75 15.836 8.06324 16.1493 8.44963 16.1493H21.5504C21.9368 16.1493 22.25 15.836 22.25 15.4496C22.25 15.0632 21.9368 14.75 21.5504 14.75H8.44963Z" fill="white" stroke="white" stroke-width="0.5" stroke-linecap="round"/>
+                                </svg>
+                                
+                            </div>
+                          </div>
+                        </div>
+                        <div x-show="open" x-transition:enter="transition duration-500 ease-out" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition duration-500 ease-in" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="lg:w-[72%]">
+                            <p class="text-[#6F6C90] text-xs sm:text-sm mt-2 lg:mt-1 font-normal left-0 ">
+                                Ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat aute irure dolor
+                            </p>
+                        </div>
+                    </div>
+                    <div x-data="{open:false}" : class="mt-3 py-5 px-6 transition-all ease-in-out duration-200  border rounded-lg border-[#EAECF0] gap-4 h-fit"  x-cloak>
+                        <div class="inline-flex flex-col gap-x-80 w-full items-center justify-between">
+                          <div class="flex justify-between w-full items-center">
+                            <p class=" text-sm sm:text-base font-medium ">Why is Pesaflow the best payments tool?</p>
+                            <div class="">
+                                <svg @click="open = true" x-show="!open" width="30" height="31" viewBox="0 0 30 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect y="0.0605469" width="30" height="30" rx="8" fill="#EAECF0"/>
+                                    <path d="M15 8V22M8 15H22" stroke="#667085" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                <svg x-show="open" @click="open = false"  width="30" height="31" viewBox="0 0 30 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect y="0.0605469" width="30" height="30" rx="8" fill="#2C7BE5"/>
+                                <path d="M8.44963 14.75C8.06324 14.75 7.75 15.0632 7.75 15.4496C7.75 15.836 8.06324 16.1493 8.44963 16.1493H21.5504C21.9368 16.1493 22.25 15.836 22.25 15.4496C22.25 15.0632 21.9368 14.75 21.5504 14.75H8.44963Z" fill="white" stroke="white" stroke-width="0.5" stroke-linecap="round"/>
+                                </svg>
+                                
+                            </div>
+                          </div>
+                        </div>
+                        <div x-show="open" x-transition:enter="transition duration-500 ease-out" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition duration-500 ease-in" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="lg:w-[72%]">
+                            <p class="text-[#6F6C90] text-xs sm:text-sm mt-2 lg:mt-1 font-normal left-0 ">
+                                Ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat aute irure dolor
+                            </p>
+                        </div>
+                    </div>
+                    <div x-data="{open:false}" : class="mt-3 py-5 px-6 transition-all ease-in-out duration-200  border rounded-lg border-[#EAECF0] gap-4 h-fit"  x-cloak>
+                        <div class="inline-flex flex-col gap-x-80 w-full items-center justify-between">
+                          <div class="flex justify-between w-full items-center">
+                            <p class=" text-sm sm:text-base font-medium ">Why is Pesaflow the best payments tool?</p>
+                            <div class="">
+                                <svg @click="open = true" x-show="!open" width="30" height="31" viewBox="0 0 30 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect y="0.0605469" width="30" height="30" rx="8" fill="#EAECF0"/>
+                                    <path d="M15 8V22M8 15H22" stroke="#667085" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                <svg x-show="open" @click="open = false"  width="30" height="31" viewBox="0 0 30 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect y="0.0605469" width="30" height="30" rx="8" fill="#2C7BE5"/>
+                                <path d="M8.44963 14.75C8.06324 14.75 7.75 15.0632 7.75 15.4496C7.75 15.836 8.06324 16.1493 8.44963 16.1493H21.5504C21.9368 16.1493 22.25 15.836 22.25 15.4496C22.25 15.0632 21.9368 14.75 21.5504 14.75H8.44963Z" fill="white" stroke="white" stroke-width="0.5" stroke-linecap="round"/>
+                                </svg>
+                                
+                            </div>
+                          </div>
+                        </div>
+                        <div x-show="open" x-transition:enter="transition duration-500 ease-out" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition duration-500 ease-in" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="lg:w-[72%]">
+                            <p class="text-[#6F6C90] text-xs sm:text-sm mt-2 lg:mt-1 font-normal left-0 ">
+                                Ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat aute irure dolor
+                            </p>
+                        </div>
+                    </div>
+                    <div x-data="{open:false}" : class="mt-3 py-5 px-6 transition-all ease-in-out duration-200  border rounded-lg border-[#EAECF0] gap-4 h-fit "  x-cloak>
+                        <div class="inline-flex flex-col gap-x-80 w-full items-center justify-between">
+                          <div class="flex justify-between w-full items-center">
+                            <p class=" text-sm sm:text-base font-medium ">Why is Pesaflow the best payments tool?</p>
+                            <div class="">
+                                <svg @click="open = true" x-show="!open" width="30" height="31" viewBox="0 0 30 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect y="0.0605469" width="30" height="30" rx="8" fill="#EAECF0"/>
+                                    <path d="M15 8V22M8 15H22" stroke="#667085" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                <svg x-show="open" @click="open = false"  width="30" height="31" viewBox="0 0 30 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect y="0.0605469" width="30" height="30" rx="8" fill="#2C7BE5"/>
+                                <path d="M8.44963 14.75C8.06324 14.75 7.75 15.0632 7.75 15.4496C7.75 15.836 8.06324 16.1493 8.44963 16.1493H21.5504C21.9368 16.1493 22.25 15.836 22.25 15.4496C22.25 15.0632 21.9368 14.75 21.5504 14.75H8.44963Z" fill="white" stroke="white" stroke-width="0.5" stroke-linecap="round"/>
+                                </svg>
+                                
+                            </div>
+                          </div>
+                        </div>
+                        <div x-show="open" x-transition:enter="transition duration-500 ease-out" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition duration-500 ease-in" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="lg:w-[72%]">
+                            <p class="text-[#6F6C90] text-xs sm:text-sm mt-2 lg:mt-1 font-normal left-0 ">
+                                Ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat aute irure dolor
+                            </p>
+                        </div>
+                    </div>
+                   
+                </div>
+            </div>            
+        </div>
+        <div  class="hidden lg:col-span-2">
+            &nbsp;
+        </div>
+    </div>
+    </div>
+</body>
+</html>
